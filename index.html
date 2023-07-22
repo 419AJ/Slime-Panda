@@ -47,7 +47,10 @@
 
         .product {
             width: 100%;
-            height: auto;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             border: 1px solid #ddd;
             margin: 10px;
             padding: 20px;
@@ -141,6 +144,7 @@
             }
             .product {
                 width: 30%; /* Show 3 products per row */
+                min-height: initial;
             }
             .image-container {
                 flex-direction: row;
@@ -198,9 +202,7 @@
             </a>
         </div>
     </div>
-    <div class="center-container">
-        <button class="shopslime" onclick="document.getElementById('buynow').scrollIntoView();">Buy Slime</button>
-    </div>
+
 
 </body>
 </html>
