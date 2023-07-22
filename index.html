@@ -19,7 +19,6 @@
             background-color: black;
             padding: 10px;
             text-align: center;
-            
         }
 
         .header h1 {
@@ -41,14 +40,14 @@
 
         .products {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             margin: 0 auto;
         }
 
         .product {
-            width: 20%;
-            height: 450px;
+            width: 100%;
+            height: auto;
             border: 1px solid #ddd;
             margin: 10px;
             padding: 20px;
@@ -56,26 +55,10 @@
             border-radius: 10px;
             box-sizing: border-box;
         }
-			 @media screen and (min-width: 600px) {
-           	 .product {
-                width: 45%; /* Show 2 products per row */
-            }
-			 }
- @media screen and (min-width: 1024px) {
-            .product {
-                width: 30%; /* Show 3 products per row */
-            }
-        }
-@media screen and (min-width: 1920px) {
-            .product {
-                width: 20%; /* Show 5 products per row */
-            }
-        }
-
 
         .product img {
             width: 100%;
-            height: 70%;
+            height: auto;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -103,22 +86,28 @@
             cursor: pointer;
             border-radius: 10px;
         }
-	.product button:hover {
-    	background-color: #ADFF2F; /* Slime Green color */
-    	color: black;
-	}
 
-  .image-container {
-            margin-top: 20px;
-            margin-left: 0px;
-            margin-bottom: 20px;
-            margin-right: 0px;
-            background-color: silver;
-	    display: flex;
-  	    justify-content: space-between;
-	    border: 1px solid black;
+        .product button:hover {
+            background-color: #ADFF2F; /* Slime Green color */
+            color: black;
         }
-    .shopslime:hover {
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .shopslime:hover {
             background-color: #ADFF2F;
         }
 
@@ -127,39 +116,39 @@
             text-align: center;
             font-size: 0.55em;
         }
-.center-container {
-    display: flex;
-    justify-content: center;
-}
 
-.shopslime {
-    background-color: black;
-    color: #ffffff;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 100px;
-    height: 45px;
-    margin-bottom: 20px;
-    border: none;
-}
- @media screen and (min-width: 600px) {
-            .image-container img {
-                width: 45%; /* Show 2 images per row */
-            }
+        .center-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .shopslime {
+            background-color: black;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 100px;
+            height: 45px;
+            margin-bottom: 20px;
+            border: none;
         }
 
         @media screen and (min-width: 1024px) {
-            .image-container img {
-                width: 30%; /* Show 3 images per row */
+            .products {
+                flex-direction: row;
+                justify-content: space-around;
+                flex-wrap: wrap;
             }
-        }
-
-        @media screen and (min-width: 1920px) {
+            .product {
+                width: 30%; /* Show 3 products per row */
+            }
+            .image-container {
+                flex-direction: row;
+            }
             .image-container img {
                 width: 20%; /* Show 5 images per row */
             }
         }
-
     </style>
 </head>
 <body>
@@ -171,58 +160,51 @@
         <div></div>
         <a href="About.html" target="_blank">About Us</a>
     </div>
-<div class="image-container">
-        <img src="Images/about1.jpg" width="270" height="480" alt="about1">
-        <img src="Images/about2.jpg" width="270" height="480" alt="about2">
-        <img src="Images/about3.jpg" width="270" height="480" alt="about3">
-        <img src="Images/about4.jpg" width="270" height="480" alt="about4">
-        <img src="Images/about5.jpg" width="270" height="480" alt="about5">
-        
+    <div class="image-container">
+        <img src="Images/about1.jpg" alt="about1">
+        <img src="Images/about2.jpg" alt="about2">
+        <img src="Images/about3.jpg" alt="about3">
+        <img src="Images/about4.jpg" alt="about4">
+        <img src="Images/about5.jpg" alt="about5">
     </div>
-<div class="center-container">
-    <button class="shopslime"
-onclick="document.getElementById('buynow').scrollIntoView();">
-Buy Slime
-</button>
-</div>
-
-    <div class="products"
-	id="buynow">
+    <div class="center-container">
+        <button class="shopslime" onclick="document.getElementById('buynow').scrollIntoView();">Buy Slime</button>
+    </div>
+    <div class="products" id="buynow">
         <div class="product">
             <h2 class="product-name">Slime Trucker</h2>
             <img src="Images/Blackslimetrucker.png" alt="Slime Trucker">
             <h2 class="product-price">₦6,000</h2>
-          
-<a href="Buy now hat.html" target="_blank">
-    <button>Buy Now</button>
-</a>
-
-
+            <a href="Buy now hat.html" target="_blank">
+                <button>Buy Now</button>
+            </a>
         </div>
 
         <div class="product">
             <h2 class="product-name">Slime Shirts</h2>
             <img src="Images/Blackslimeshirt.png" alt="Slime Shirts">
             <h2 class="product-price">₦10,500</h2>
-          
             <a href="Buy now shirt.html" target="_blank">
-    <button>Buy Now</button>
-</a>
-
+                <button>Buy Now</button>
+            </a>
         </div>
 
         <div class="product">
             <h2 class="product-name">Slime Shorts</h2>
             <img src="Images/Blackslimeshort.png" alt="Slime Shorts">
-            <h2 class="product-price">₦14,000</h2>
-           
-           <a href="Buy now short.html" target="_blank">
-    <button>Buy Now</button>
-</a>
-
+            <h2 class="product-price">₦10,500</h2>
+            <a href="Buy now short.html" target="_blank">
+                <button>Buy Now</button>
+            </a>
         </div>
     </div>
-
-  
+    <div class="center-container">
+        <button class="shopslime" onclick="document.getElementById('buynow').scrollIntoView();">Buy Slime</button>
+    </div>
+    <footer>
+        <div class="header">
+            <p class="copyright">SLIME PANDA - ©2023</p>
+        </div>
+    </footer>
 </body>
 </html>
