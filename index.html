@@ -97,14 +97,15 @@
 
         .image-container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: no-wrap;
             align-items: center;
             border: 1px solid black;
             overflow: hidden;
         }
 
         .image-container img {
-            max-width: 100%;
+            width: calc(100% / 5 - 20px);
             height: auto;
             margin: 10px;
             box-sizing: border-box;
@@ -150,7 +151,7 @@
                 flex-direction: row;
             }
             .image-container img {
-                max-width: 100%; /* Show 5 images per row */
+                width: calc(100% / 5 - 20px);
             }
         }
     </style>
@@ -171,36 +172,34 @@
         <img src="Images/about4.jpg" alt="about4">
         <img src="Images/about5.jpg" alt="about5">
     </div>
-    <div class="center-container">
-        <button class="shopslime" onclick="document.getElementById('buynow').scrollIntoView();">Buy Slime</button>
-    </div>
-    <div class="products" id="buynow">
+    <div class="products">
+        <!-- Product 1 -->
         <div class="product">
-            <h2 class="product-name">Slime Trucker</h2>
-            <img src="Images/Blackslimetrucker.png" alt="Slime Trucker">
-            <h2 class="product-price">₦6,000</h2>
-            <a href="Buy now hat.html" target="_blank">
-                <button>Buy Now</button>
-            </a>
+            <img src="Images/product1.png" alt="Product 1">
+            <h2 class="product-name">Slime 1</h2>
+            <p class="product-price">$15.99</p>
+            <button type="button">Buy Now</button>
         </div>
-
+        <!-- Product 2 -->
         <div class="product">
-            <h2 class="product-name">Slime Shirts</h2>
-            <img src="Images/Blackslimeshirt.png" alt="Slime Shirts">
-            <h2 class="product-price">₦4,000</h2>
-            <a href="Buy now shirts.html" target="_blank">
-                <button>Buy Now</button>
-            </a>
+            <img src="Images/product2.png" alt="Product 2">
+            <h2 class="product-name">Slime 2</h2>
+            <p class="product-price">$16.99</p>
+            <button type="button">Buy Now</button>
         </div>
-
+        <!-- Product 3 -->
         <div class="product">
-            <h2 class="product-name">Slime Hoodies</h2>
-            <img src="Images/blackslimehoodie.png" alt="Slime Hoodies">
-            <h2 class="product-price">₦8,000</h2>
-            <a href="Buy now hoodie.html" target="_blank">
-                <button>Buy Now</button>
-            </a>
+            <img src="Images/product3.png" alt="Product 3">
+            <h2 class="product-name">Slime 3</h2>
+            <p class="product-price">$17.99</p>
+            <button type="button">Buy Now</button>
         </div>
     </div>
+    <footer>
+        <div class="center-container">
+            <button class="shopslime" onclick="window.location.href='Shop.html';">Shop Slimes</button>
+        </div>
+        <p class="copyright">© 2023 Slime Panda. All rights reserved.</p>
+    </footer>
 </body>
 </html>
