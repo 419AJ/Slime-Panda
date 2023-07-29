@@ -48,12 +48,17 @@
         }
 
         .product-details .slideshow {
-            width: 50%;
-            height: auto;
-            position: relative;
-            margin-right: 20px;
-            border-radius: 15px; /* Rounded corners */
-            overflow: hidden; /* Make sure images conform to rounded corners */
+            width: 100%;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-sizing: border-box;
         }
 
         .product-details .slideshow img {
