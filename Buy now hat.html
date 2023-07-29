@@ -44,6 +44,7 @@
         .product-details {
             display: flex;
             margin: 20px;
+            margin-bottom: 60px; /* Add bottom margin to prevent overlap with footer */
         }
 
         .product-details .slideshow {
@@ -51,11 +52,13 @@
             height: auto;
             position: relative;
             margin-right: 20px;
+            border-radius: 15px; /* Rounded corners */
+            overflow: hidden; /* Make sure images conform to rounded corners */
         }
 
         .product-details .slideshow img {
-            width: 100%;
-            height: auto;
+            width: 100%; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
             position: absolute;
             transition: opacity 1s;
         }
@@ -114,9 +117,9 @@
         <!-- The slideshow container -->
         <div class="slideshow">
             <img class="showing" src="Images/Blackslimetrucker.png" />
-            <img style="opacity: 0" src="Images/blacktrucker.png" />
-            <img style="opacity: 0" src="Images/normaltrucker.png" />
-            <img style="opacity: 0" src="Images/Alltrucker.png" />
+            <img style="opacity: 0; display: none;" src="Images/blacktrucker.png" />
+            <img style="opacity: 0; display: none;" src="Images/normaltrucker.png" />
+            <img style="opacity: 0; display: none;" src="Images/Alltrucker.png" />
         </div>
 
         <div>
@@ -135,29 +138,28 @@
         <p class="copyright">&copy; 2023 SLIME PANDA. All rights reserved.</p>
     </div>
 
- <script>
-    /* Define a function to rotate the images */
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slideshow img");
+    <script>
+        /* Define a function to rotate the images */
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slideshow img");
 
-    function rotateImages() {
-        slides.forEach((slide, index) => {
-            if (index === slideIndex) {
-                slide.style.opacity = 1; // show current image
-                slide.style.display = 'block'; // make current image visible
-                slide.style.zIndex = 1; // bring current image to the front
-            } else {
-                slide.style.opacity = 0; // hide all other images
-                slide.style.display = 'none'; // make other images invisible
-                slide.style.zIndex = 0; // send other images to the back
-            }
-        });
+        function rotateImages() {
+            slides.forEach((slide, index) => {
+                if (index === slideIndex) {
+                    slide.style.opacity = 1; // show current image
+                    slide.style.display = 'block'; // make current image visible
+                    slide.style.zIndex = 1; // bring current image to the front
+                } else {
+                    slide.style.opacity = 0; // hide all other images
+                    slide.style.display = 'none'; // make other images invisible
+                    slide.style.zIndex = 0; // send other images to the back
+                }
+            });
 
-        slideIndex = (slideIndex + 1) % slides.length; // go to next image
-    }
+            slideIndex = (slideIndex + 1) % slides.length; // go to next image
+        }
 
-    setInterval(rotateImages, 2000); // rotate every 2 seconds
-</script>
-
+        setInterval(rotateImages, 4000); // rotate every 2 seconds
+    </script>
 </body>
 </html>
