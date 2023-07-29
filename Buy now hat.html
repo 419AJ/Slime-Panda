@@ -48,25 +48,23 @@
         }
 
         .product-details .slideshow {
-            width: 100%;
-            min-height: 450px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin-right: 20px;
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Make sure images conform to rounded corners */
+}
 
-        .product-details .slideshow img {
-            width: 100%; /* Adjust as needed */
-            height: auto; /* Adjust as needed */
-            position: absolute;
-            transition: opacity 1s;
-        }
+
+      .product-details .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will ensure the images scale nicely to fill the box */
+    position: absolute;
+    transition: opacity 1s;
+}
+
 
         .showing {
             opacity: 1 !important;
